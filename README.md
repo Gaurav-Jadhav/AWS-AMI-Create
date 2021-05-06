@@ -1,4 +1,4 @@
-Automate AMI Creation for Customized EC2 Instances #python $boto3
+Automate AMI Creation for Customized EC2 Instances #python #boto3
 
 You can automate AMI Creation using simple parameters like Server Host Name ,Region , Tickit ID (or any id -you can customize it as per your need)
 It is easy to use script for system admins , developers or person with basic AWS knowledge.
