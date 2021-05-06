@@ -6,4 +6,5 @@ You can also provide reboot parameter in case you want to reboot server before A
 
 
 How to use script:
-  python3 aws_list.py -n gaurav.jadhav.com -t 1515 -r ap-south-1
+
+  python3 aws_ami.py -n gaurav.jadhav.com -t 1515 -r ap-south-1
