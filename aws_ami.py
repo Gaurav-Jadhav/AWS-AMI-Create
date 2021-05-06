@@ -34,9 +34,13 @@ def process(name,tickiet_id,region):
         print("Exception occoured while looking fot instance kindly check Instance: ERROR :",e)
     print("InstanceId is: ",instance_id)
 
-    #PublicIpAddress
-    PublicIpAddress = response['Reservations'][0]['Instances'][0]['PublicIpAddress']
-    print("PublicIpAddress is: ",PublicIpAddress)
+    try:
+        #PublicIpAddress
+        PublicIpAddress = response['Reservations'][0]['Instances'][0]['PublicIpAddress']
+        print("PublicIpAddress is: ",PublicIpAddress)
+    except Exception as e:
+        print("No public IP assign")
+        pass
 
     #PrivateIpAddress
     PrivateIpAddress = response['Reservations'][0]['Instances'][0]['PrivateIpAddress']
@@ -73,6 +77,7 @@ def process(name,tickiet_id,region):
     if not image_id:
         sys.exit("No Image Id Found Exiting Bye ..:)")
 
+    #image_id = 'ami-00345f5ee7f2bf179'
     ami_tag = client.create_tags(Resources=[image_id], Tags=[{'Key':'Name', 'Value':name}])
 
 
